@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --primary-color: #0d6efd;
+  --secondary-color: #6c757d;
+  --bg-light: #e2e2e2;
+  --bg-dark: #222222;
+  --text-dark: #222222;
+  --text-light: #e2e2e2;
+  --base-font-size: 16px;
+  --archivo-black-font: "Archivo Black", sans-serif;
+  --roboto-font: "Roboto", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  font-family: var(--roboto-font);
+  font-size: var(--base-font-size);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;          
+  width: 100%;
+  background-color: var(--bg-dark);
+  padding: 0 30px;               
+  min-height: 60px;              
+  box-sizing: border-box;        
+}
+
+.nav-title {
+  color: var(--primary-color);
+  font-family: var(--archivo-black-font);
+  font-size: 28px;
+}
+
+.nav-list ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list a {
+  color: var(--text-light);
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-list a:hover {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+}
