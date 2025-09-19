@@ -4,23 +4,119 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="style.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <title>c0925</title>
 </head>
-<body>
-  <nav class="nav-container">
-    <div class="nav-title">
-      C0925
-    </div>
-    <div class="nav-list">
-      <ul>
-        <li><a href="#">Beranda</a></li>
-        <li><a href="#">Tentang</a></li>
-      </ul>
-    </div>
-  </nav>
 
-  <main>
-    <h1>LOREM IPSUM</h1>
-  </main>
+<script>
+  window.addEventListener("scroll", function() {
+    const header = document.querySelector("header");
+    if (window.scrollY > 50) { // setelah scroll 50px
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  });
+</script>
+
+<body>
+<header>
+  <div class="logo"><strong>SEHATKU</strong></div>
+  <nav>
+    <a href="#layanan">Layanan</a>
+    <a href="#artikel">Artikel</a>
+    <a href="#direktori">Direktori</a>
+    <a href="#fitur">Fitur</a>
+    <a href="#berita">Berita</a>
+  </nav>
+</header>
+
+
+<section class="hero">
+  <h1>Website Kesehatan untuk Hidup Lebih Baik</h1>
+  <p>Konsultasi, artikel, berita, dan layanan kesehatan lengkap dalam satu platform.</p>
+</section>
+
+
+<div class="container">
+  <section id="layanan">
+    <h2>Layanan Kesehatan</h2>
+    <div class="grid grid-3">
+      <div class="card"><i class="fas fa-user-md"></i><h3>Konsultasi Online</h3><p>Bicara langsung dengan dokter kapan saja.</p></div>
+      <div class="card"><i class="fas fa-hospital"></i><h3>Booking Klinik</h3><p>Pesan janji temu dengan mudah dan cepat.</p></div>
+      <div class="card"><i class="fas fa-vials"></i><h3>Layanan Lab</h3><p>Informasi tes kesehatan & laboratorium.</p></div>
+    </div>
+  </section>
+
+
+  <section id="artikel">
+    <h2>Artikel & Edukasi</h2>
+    <div class="grid grid-3">
+      <div class="card"><i class="fas fa-apple-alt"></i><h3>Tips Gizi Seimbang</h3><p>Panduan makan sehat untuk energi harian.</p></div>
+      <div class="card"><i class="fas fa-running"></i><h3>Olahraga Ringan</h3><p>Manfaat olahraga sederhana setiap hari.</p></div>
+      <div class="card"><i class="fas fa-brain"></i><h3>Kesehatan Mental</h3><p>Cara menjaga pikiran tetap sehat & tenang.</p></div>
+    </div>
+  </section>
+
+
+  <section id="direktori">
+    <h2>Direktori Kesehatan</h2>
+    <div class="grid grid-3">
+      <div class="card"><i class="fas fa-user-nurse"></i><h3>Daftar Dokter</h3></div>
+      <div class="card"><i class="fas fa-clinic-medical"></i><h3>Rumah Sakit & Klinik</h3></div>
+      <div class="card"><i class="fas fa-pills"></i><h3>Apotek & Lab</h3></div>
+    </div>
+  </section>
+
+
+  <section id="fitur">
+    <h2>Fitur Interaktif</h2>
+    <div class="grid grid-3">
+      <div class="card"><i class="fas fa-calculator"></i><h3>Kalkulator Kesehatan</h3></div>
+      <div class="card"><i class="fas fa-robot"></i><h3>Chatbot Kesehatan</h3></div>
+      <div class="card"><i class="fas fa-comments"></i><h3>Forum Diskusi</h3></div>
+    </div>
+  </section>
+
+
+  <section id="berita">
+    <h2>Berita & Update Medis</h2>
+    <div class="grid grid-3">
+      <div class="card"><i class="fas fa-pills"></i><h3>Obat Baru</h3><p>Perkembangan terkini di dunia medis.</p></div>
+      <div class="card"><i class="fas fa-bullhorn"></i><h3>Kampanye Sehat</h3><p>Program kesehatan pemerintah terbaru.</p></div>
+      <div class="card"><i class="fas fa-syringe"></i><h3>Info Vaksin</h3><p>Update vaksin & pencegahan penyakit.</p></div>
+    </div>
+  </section>
+</div>
+
+
+<footer>
+  <p>&copy; 2025 SehatKu. Semua Hak Dilindungi.</p>
+</footer>
+
+
+<script>
+  // JS: scroll smooth
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+      });
+    });
+  });
+</script>
+<script>
+  const cards = document.querySelectorAll('.card');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  cards.forEach(card => observer.observe(card));
+</script>
 </body>
 </html>
