@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="png" href="asset/favicon.png">
+  <title>Kalkulator Kesehatan - SehatKu</title>
+</head>
+<body>
+<header>
+  <div class="logo"><a href="index.html"><strong>SEHATKU</strong></a></div>
+  <nav>
+    <a href="index.html">Beranda</a>
+    <a href="index.html#layanan">Layanan</a>
+    <a href="index.html#artikel">Artikel</a>
+    <a href="index.html#direktori">Direktori</a>
+    <a href="index.html#fitur">Fitur</a>
+    <a href="index.html#berita">Berita</a>
+  </nav>
+  <div class="burger">
+    <i class="fas fa-bars"></i>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Kalkulator Kesehatan</h1>
+  <p>Hitung Indeks Massa Tubuh (BMI) dan cek kategori kesehatan Anda.</p>
+</section>
+
+<div class="container">
+  <section id="kalkulator">
+    <h2><i class="fas fa-calculator"></i> BMI (Body Mass Index)</h2>
+    <p style="text-align:center;">Masukkan tinggi badan dan berat badan Anda untuk menghitung BMI.</p>
+
+    <div class="card" style="max-width:500px; margin:auto;">
+      <form id="bmiForm">
+        <label for="berat">Berat Badan (kg)</label>
+        <input type="number" id="berat" name="berat" required min="1" step="0.1" style="width:100%; padding:0.5rem; margin:0.5rem 0;">
+
+        <label for="tinggi">Tinggi Badan (cm)</label>
+        <input type="number" id="tinggi" name="tinggi" required min="1" step="0.1" style="width:100%; padding:0.5rem; margin:0.5rem 0;">
+
+        <button type="submit" class="btn" style="margin-top:1rem; padding:0.7rem 1.2rem; background:var(--color-1); color:#fff; border:none; border-radius:5px; cursor:pointer;">Hitung BMI</button>
+      </form>
+
+      <div id="hasilBMI" style="margin-top:1rem; font-weight:bold; text-align:center;"></div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <p class="daftar-anggota"><strong>Anggota Kelompok:</strong></p>
+  <ul>
+    <li><a href="https://www.instagram.com/alsaahn_?igsh=MTlzYnIzZHIxbmJodg==">Nabila Alsa Haryanto [K1D024006]</a></li>
+    <li><a href="https://instagram.com/nabilaedsw">Nabila Dwi Setiawati [K1D024005]</a></li>
+    <li><a href="https://www.instagram.com/mylnanrs?igsh=MnZ4YXg2cWVlNzcy">Meylina Nur Sasmita [K1D024017]</a></li>
+  </ul>
+  <p>&copy; <strong>2025 SehatKu.</strong> Semua Hak Dilindungi.</p>
+</footer>
+
+<script>
+  // Burger menu
+  const burger = document.querySelector('.burger');
+  const nav = document.querySelector('nav');
+  burger.addEventListener('click', () => {
+    nav.classList.toggle('active');
+    burger.querySelector('i').classList.toggle('fa-bars');
+    burger.querySelector('i').classList.toggle('fa-times');
+  });
+
+  // BMI Kalkulator
+  document.getElementById("bmiForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const berat = parseFloat(document.getElementById("berat").value);
+    const tinggi = parseFloat(document.getElementById("tinggi").value) / 100; // cm -> meter
+    const bmi = (berat / (tinggi * tinggi)).toFixed(1);
+
+    let kategori = "";
+    if (bmi < 18.5) kategori = "Kurus";
+    else if (bmi >= 18.5 && bmi < 24.9) kategori = "Normal";
+    else if (bmi >= 25 && bmi < 29.9) kategori = "Kelebihan Berat";
+    else kategori = "Obesitas";
+
+    document.getElementById("hasilBMI").innerHTML = 
+      `BMI Anda: <span style="color:var(--color-1);">${bmi}</span> (${kategori})`;
+  });
+</script>
+
+<script>
+  const cards = document.querySelectorAll('.card');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  cards.forEach(card => observer.observe(card));
+</script>
+</body>
+</html>

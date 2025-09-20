@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="style.css" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <title>c0925</title>
+  <link rel="icon" type="png" href="asset/favicon.png">
+  <title>SehatKu</title>
 </head>
 
 <script>
@@ -29,6 +30,9 @@
     <a href="#fitur">Fitur</a>
     <a href="#berita">Berita</a>
   </nav>
+  <div class="burger">
+    <i class="fas fa-bars"></i>
+  </div>
 </header>
 
 
@@ -42,9 +46,9 @@
   <section id="layanan">
     <h2>Layanan Kesehatan</h2>
     <div class="grid grid-3">
-      <div class="card"><i class="fas fa-user-md"></i><h3>Konsultasi Online</h3><p>Bicara langsung dengan dokter kapan saja.</p></div>
-      <div class="card"><i class="fas fa-hospital"></i><h3>Booking Klinik</h3><p>Pesan janji temu dengan mudah dan cepat.</p></div>
-      <div class="card"><i class="fas fa-vials"></i><h3>Layanan Lab</h3><p>Informasi tes kesehatan & laboratorium.</p></div>
+      <a class="card" href="konsultasi.html"><i class="fas fa-user-md"></i><h3>Konsultasi Online</h3><p>Bicara langsung dengan dokter kapan saja.</p></a>
+      <a class="card"><i class="fas fa-hospital"></i><h3>Booking Klinik</h3><p>Pesan janji temu dengan mudah dan cepat.</p></a>
+      <a class="card"><i class="fas fa-vials"></i><h3>Layanan Lab</h3><p>Informasi tes kesehatan & laboratorium.</p></a>
     </div>
   </section>
 
@@ -52,9 +56,9 @@
   <section id="artikel">
     <h2>Artikel & Edukasi</h2>
     <div class="grid grid-3">
-      <div class="card"><i class="fas fa-apple-alt"></i><h3>Tips Gizi Seimbang</h3><p>Panduan makan sehat untuk energi harian.</p></div>
-      <div class="card"><i class="fas fa-running"></i><h3>Olahraga Ringan</h3><p>Manfaat olahraga sederhana setiap hari.</p></div>
-      <div class="card"><i class="fas fa-brain"></i><h3>Kesehatan Mental</h3><p>Cara menjaga pikiran tetap sehat & tenang.</p></div>
+      <a class="card"><i class="fas fa-apple-alt"></i><h3>Tips Gizi Seimbang</h3><p>Panduan makan sehat untuk energi harian.</p></a>
+      <a class="card"><i class="fas fa-running"></i><h3>Olahraga Ringan</h3><p>Manfaat olahraga sederhana setiap hari.</p></a>
+      <a class="card"><i class="fas fa-brain"></i><h3>Kesehatan Mental</h3><p>Cara menjaga pikiran tetap sehat & tenang.</p></a>
     </div>
   </section>
 
@@ -62,9 +66,9 @@
   <section id="direktori">
     <h2>Direktori Kesehatan</h2>
     <div class="grid grid-3">
-      <div class="card"><i class="fas fa-user-nurse"></i><h3>Daftar Dokter</h3></div>
-      <div class="card"><i class="fas fa-clinic-medical"></i><h3>Rumah Sakit & Klinik</h3></div>
-      <div class="card"><i class="fas fa-pills"></i><h3>Apotek & Lab</h3></div>
+      <a class="card"><i class="fas fa-user-nurse"></i><h3>Daftar Dokter</h3></a>
+      <a class="card"><i class="fas fa-clinic-medical"></i><h3>Rumah Sakit & Klinik</h3></a>
+      <a class="card"><i class="fas fa-pills"></i><h3>Apotek & Lab</h3></a>
     </div>
   </section>
 
@@ -72,9 +76,9 @@
   <section id="fitur">
     <h2>Fitur Interaktif</h2>
     <div class="grid grid-3">
-      <div class="card"><i class="fas fa-calculator"></i><h3>Kalkulator Kesehatan</h3></div>
-      <div class="card"><i class="fas fa-robot"></i><h3>Chatbot Kesehatan</h3></div>
-      <div class="card"><i class="fas fa-comments"></i><h3>Forum Diskusi</h3></div>
+      <a href="kalkulator.html" class="card"><i class="fas fa-calculator"></i><h3>Kalkulator Kesehatan</h3></a>
+      <a class="card"><i class="fas fa-robot"></i><h3>Chatbot Kesehatan</h3></a>
+      <a class="card"><i class="fas fa-comments"></i><h3>Forum Diskusi</h3></a>
     </div>
   </section>
 
@@ -91,10 +95,25 @@
 
 
 <footer>
-  <p>&copy; 2025 SehatKu. Semua Hak Dilindungi.</p>
+  <p class="daftar-anggota"><strong>Anggota Kelompok:</strong></p>
+  <ul>
+    <li><a href="https://www.instagram.com/alsaahn_?igsh=MTlzYnIzZHIxbmJodg==">Nabila Alsa Haryanto [K1D024006]</a></li>
+    <li><a href="https://instagram.com/nabilaedsw">Nabila Dwi Setiawati [K1D024005]</a></li>
+    <li><a href="https://www.instagram.com/mylnanrs?igsh=MnZ4YXg2cWVlNzcy">Meylina Nur Sasmita [K1D024017]</a></li>
+  </ul>
+  <p>&copy; <strong>2025 SehatKu.</strong> Semua Hak Dilindungi.</p>
 </footer>
 
+<script>
+  const burger = document.querySelector('.burger');
+  const nav = document.querySelector('nav');
 
+  burger.addEventListener('click', () => {
+    nav.classList.toggle('active');
+    burger.querySelector('i').classList.toggle('fa-bars');
+    burger.querySelector('i').classList.toggle('fa-times');
+  });
+</script>
 <script>
   // JS: scroll smooth
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {

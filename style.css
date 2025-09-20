@@ -61,6 +61,51 @@ header nav a:hover::after {
   width: 100%;
 }
 
+.burger {
+  display: none;
+  font-size: 1.8rem;
+  color: var(--color-3);
+  cursor: pointer;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
+/* untuk mobile */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    background: var(--color-1);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%; /* biar full lebar */
+    overflow: hidden; /* sembunyikan isi saat tertutup */
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+  }
+
+  nav.active {
+    max-height: 500px; /* cukup besar untuk menampung semua menu */
+    opacity: 1;
+  }
+
+  nav a {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .burger {
+    display: block;
+    font-size: 1.8rem;
+    color: var(--color-3);
+    cursor: pointer;
+  }
+}
+
 .logo {
   width: 100px;
   text-align: center;
@@ -94,6 +139,13 @@ header nav a:hover::after {
 .hero h1 {
   font-size: 2.8rem;
   margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
 }
 
 .container {
@@ -130,6 +182,14 @@ h2 {
   opacity: 0;
   transform: translateY(50px);
   transition: all 0.8s ease;
+  text-decoration: none;
+  color: var(--color-5);
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02); /* naik + sedikit membesar */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* shadow lebih dalam */
+  border: 1px solid var(--color-4);
 }
 
 .card.show {
@@ -143,17 +203,297 @@ h2 {
   margin-bottom: 0.5rem;
 }
 
+.card:hover i {
+  color: var(--color-4);
+}
+
 footer {
+  display: flex;
+  flex-direction: column;
   background: var(--color-5);
   color: var(--color-3);
-  text-align: center;
   padding: 1.5rem;
+  margin-top: 2rem;
+  align-items: center;
+}
+
+footer p {
+  text-align: center;
+}
+
+.daftar-anggota {
+  margin: 0;
+}
+
+footer ul {
+  padding: 0;
+  margin: 5px;
+}
+
+footer ul li {
+  list-style: none;
+}
+
+footer ul li:hover a {
+  color: var(--color-4);
+  background-color: var(--color-1);
+  border-radius: 3px;
+  padding: 0 5px;
+  margin: 0 5px;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: var(--color-3);
+}
+
+/*Konsultasi Online Page */ 
+
+/* Container utama */
+.consult-page {
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+.consult-page.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Judul Halaman */
+.consult-page h2 {
+  text-align: center;
+  color: var(--color-1);
+  margin-bottom: 2rem;
+}
+
+/* Form konsultasi */
+.consult-page .consult-form {
+  background: var(--color-3);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.consult-page .consult-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--color-2);
+}
+
+.consult-page .consult-form input,
+.consult-page .consult-form textarea,
+.consult-page .consult-form select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 1.2rem;
+  font-family: inherit;
+}
+
+/* Tombol */
+.consult-page .consult-form button {
+  background: var(--color-1);
+  color: var(--color-3);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.consult-page .consult-form button:hover {
+  background: var(--color-4);
+  color: var(--color-5);
+}
+
+/* Daftar dokter */
+.consult-page .doctor-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
   margin-top: 2rem;
 }
 
-/* Responsive */
+.consult-page .doctor-card {
+  background: var(--color-3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: var(--color-5);
+}
+
+.consult-page .doctor-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  border: 1px solid var(--color-4);
+}
+
+.consult-page .doctor-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.consult-page .doctor-card h3 {
+  margin: 0.5rem 0;
+  color: var(--color-2);
+}
+
+.consult-page .doctor-card button {
+  background: var(--color-1);
+  color: var(--color-3);
+  border: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.consult-page .doctor-card:hover button {
+  background: var(--color-4);
+  color: var(--color-5);
+}
+
+/* Tablet */
 @media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2rem;
+  .consult-page {
+    padding: 1.5rem;
+  }
+
+  .consult-page h2 {
+    font-size: 1.6rem;
+  }
+
+  .consult-page .consult-form {
+    padding: 1.5rem;
+  }
+
+  .consult-page .doctor-card img {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .consult-page {
+    padding: 1rem;
+  }
+
+  .consult-page h2 {
+    font-size: 1.4rem;
+  }
+
+  .consult-page .consult-form {
+    padding: 1rem;
+  }
+
+  .consult-page .consult-form input,
+  .consult-page .consult-form textarea,
+  .consult-page .consult-form select {
+    font-size: 0.9rem;
+    padding: 0.7rem;
+  }
+
+  .consult-page .consult-form button {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1rem;
+  }
+
+  .consult-page .doctor-card {
+    padding: 1rem;
+  }
+
+  .consult-page .doctor-card img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .consult-page .doctor-card button {
+    width: 100%;
+    padding: 0.7rem;
+  }
+}
+
+#kalkulator form label {
+  display: block;
+  font-weight: bold;
+  margin-top: 1rem;
+  color: var(--color-2);
+}
+
+#kalkulator form input {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-top: 0.3rem;
+  transition: border-color 0.3s ease;
+}
+
+#kalkulator form input:focus {
+  border-color: var(--color-1);
+  outline: none;
+}
+
+#kalkulator .btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.7rem 1.2rem;
+  background: var(--color-1);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#kalkulator .btn:hover {
+  background: var(--color-4);
+  color: var(--color-5);
+}
+
+#hasilBMI {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  color: var(--color-5);
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  #kalkulator h2 {
+    font-size: 1.4rem;
+  }
+
+  #kalkulator form input {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  #kalkulator .btn {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1rem;
   }
 }
