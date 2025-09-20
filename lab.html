@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="png" href="asset/favicon.png">
+  <title>Layanan Lab - SehatKu</title>
+</head>
+
+<script>
+  window.addEventListener("scroll", function() {
+    const header = document.querySelector("header");
+    if (window.scrollY > 50) { // setelah scroll 50px
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  });
+</script>
+
+<body>
+<header>
+  <div class="logo"><a href="index.html"><strong>SEHATKU</strong></a></div>
+  <nav>
+    <a href="index.html#layanan">Layanan</a>
+    <a href="index.html#artikel">Artikel</a>
+    <a href="index.html#direktori">Direktori</a>
+    <a href="index.html#fitur">Fitur</a>
+    <a href="index.html#berita">Berita</a>
+  </nav>
+  <div class="burger">
+    <i class="fas fa-bars"></i>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Layanan Lab</h1>
+  <p>Pilih dan pesan paket tes kesehatan laboratorium dengan mudah.</p>
+</section>
+
+<div class="container">
+  <section id="lab">
+    <h2><i class="fas fa-vials"></i> Paket Tes Kesehatan</h2>
+    <p style="text-align:center;">Kami menyediakan berbagai paket pemeriksaan kesehatan sesuai kebutuhan Anda.</p>
+
+    <div class="lab-list">
+      <div class="lab-card">
+        <h3>Paket Dasar</h3>
+        <p>✓ Cek darah lengkap<br>✓ Gula darah<br>✓ Kolesterol</p>
+        <button class="btn pesan-btn" data-paket="Paket Dasar">Pesan</button>
+      </div>
+
+      <div class="lab-card">
+        <h3>Paket Menyeluruh</h3>
+        <p>✓ Cek darah lengkap<br>✓ Gula darah<br>✓ Kolesterol<br>✓ Fungsi hati & ginjal</p>
+        <button class="btn pesan-btn" data-paket="Paket Menyeluruh">Pesan</button>
+      </div>
+
+      <div class="lab-card">
+        <h3>Paket Premium</h3>
+        <p>✓ Semua pemeriksaan<br>✓ Tes jantung<br>✓ Konsultasi dokter spesialis</p>
+        <button class="btn pesan-btn" data-paket="Paket Premium">Pesan</button>
+      </div>
+    </div>
+
+    <!-- Form Booking Lab -->
+    <div class="lab-booking" id="labBooking" style="display:none;">
+      <h3>Form Pemesanan Tes</h3>
+      <form id="labForm">
+        <input type="hidden" id="paketLab" name="paketLab">
+
+        <label for="nama">Nama Lengkap</label>
+        <input type="text" id="nama" name="nama" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="tanggal">Tanggal Tes</label>
+        <input type="date" id="tanggal" name="tanggal" required>
+
+        <button type="submit" class="btn">Konfirmasi Pesanan</button>
+      </form>
+
+      <div id="hasilLab"></div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <p class="daftar-anggota"><strong>Anggota Kelompok:</strong></p>
+  <ul>
+    <li><a href="#">Nabila Alsa Haryanto [K1D024006]</a></li>
+    <li><a href="#">Nabila Dwi Setiawati [K1D024005]</a></li>
+    <li><a href="#">Meylina Nur Sasmita [K1D024017]</a></li>
+  </ul>
+  <p>&copy; <strong>2025 SehatKu.</strong> Semua Hak Dilindungi.</p>
+</footer>
+
+<script>
+  // Burger menu
+  const burger = document.querySelector('.burger');
+  const nav = document.querySelector('nav');
+  burger.addEventListener('click', () => {
+    nav.classList.toggle('active');
+    burger.querySelector('i').classList.toggle('fa-bars');
+    burger.querySelector('i').classList.toggle('fa-times');
+  });
+
+  // Tampilkan form pemesanan sesuai paket
+  const pesanBtns = document.querySelectorAll('.pesan-btn');
+  const labBooking = document.getElementById('labBooking');
+  const paketLabInput = document.getElementById('paketLab');
+
+  pesanBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      labBooking.style.display = 'block';
+      paketLabInput.value = btn.getAttribute('data-paket');
+      labBooking.scrollIntoView({behavior: "smooth"});
+    });
+  });
+
+  // Submit form
+  document.getElementById("labForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const nama = document.getElementById("nama").value;
+    const email = document.getElementById("email").value;
+    const tanggal = document.getElementById("tanggal").value;
+    const paket = document.getElementById("paketLab").value;
+
+    document.getElementById("hasilLab").innerHTML =
+      `<p><strong>Pemesanan Berhasil!</strong><br>
+      Paket: ${paket}<br>
+      Nama: ${nama}<br>
+      Email: ${email}<br>
+      Tanggal Tes: ${tanggal}</p>`;
+  });
+</script>
+</body>
+</html>

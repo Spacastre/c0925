@@ -428,6 +428,7 @@ footer ul li a {
   }
 }
 
+/* Kalkulator Page */
 #kalkulator form label {
   display: block;
   font-weight: bold;
@@ -496,4 +497,299 @@ footer ul li a {
     padding: 0.9rem;
     font-size: 1rem;
   }
+}
+
+
+/* Booking Klinik Page */
+#booking h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--color-1);
+}
+
+.booking-card {
+  background: var(--color-3);
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#booking label {
+  display: block;
+  font-weight: bold;
+  margin-top: 1rem;
+  color: var(--color-2);
+}
+
+#booking input {
+  width: calc(100% - 23px);
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 0.3rem;
+  font-family: inherit;
+}
+#booking select {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 0.3rem;
+  font-family: inherit;
+}
+
+#booking input:focus,
+#booking select:focus {
+  border-color: var(--color-1);
+  outline: none;
+}
+
+#booking button.btn {
+  margin-top: 1.5rem;
+  width: 100%;
+  background: var(--color-1);
+  color: var(--color-3);
+  border: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;  
+}
+
+#booking button.btn:hover {
+  background: var(--color-4);
+  color: var(--color-5);
+}
+
+#hasilBooking {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  color: var(--color-5);
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .booking-card {
+    padding: 1.2rem;
+  }
+}
+
+
+/* Layanan Lab Page */
+.lab-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.lab-card {
+  background: var(--color-3);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.lab-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  border: 1px solid var(--color-4);
+}
+
+.lab-card h3 {
+  margin-bottom: 1rem;
+  color: var(--color-1);
+}
+
+.lab-card p {
+  color: var(--color-5);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.lab-card button {
+  margin-top: 1.5rem;
+  width: 100%;
+  background: var(--color-1);
+  color: var(--color-3);
+  border: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;  
+}
+
+.lab-card:hover button {
+  background: var(--color-4);
+  color: var(--color-5);
+}
+
+/* Form Booking */
+.lab-booking {
+  background: var(--color-3);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  max-width: 600px;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+.lab-booking h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--color-2);
+}
+
+.lab-booking label {
+  display: block;
+  font-weight: bold;
+  margin-top: 1rem;
+  color: var(--color-2);
+}
+
+.lab-booking input {
+  width: calc(100% - 23px);
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 0.3rem;
+  font-family: inherit;
+}
+
+.lab-booking button {
+  margin-top: 1.5rem;
+  width: 100%;
+  background: var(--color-1);
+  color: var(--color-3);
+  border: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;  
+}
+
+.lab-booking button:hover {
+  background: var(--color-4);
+  color: var(--color-5);
+}
+
+#hasilLab {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  color: var(--color-5);
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .lab-card {
+    padding: 1rem;
+  }
+
+  .lab-booking {
+    padding: 1.2rem;
+  }
+}
+
+
+/* Daftar Dokter */
+.dokter-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.dokter-card {
+  background: var(--color-3);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.dokter-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+.dokter-card h3 {
+  margin-bottom: 0.5rem;
+  color: var(--color-1);
+}
+
+.dokter-card p {
+  font-size: 0.9rem;
+  color: var(--color-5);
+  margin: 0.3rem 0;
+}
+
+.dokter-card .btn {
+  display: inline-block;
+  margin-top: 1rem;
+  text-align: center;
+  background: var(--color-1);
+  color: var(--color-3);
+  border: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;  
+}
+
+.dokter-card .btn:hover {
+  background: var(--color-4);
+  color: var(--color-5);
+}
+
+/* RS */
+
+.rs-section {
+  padding: 2rem;
+  text-align: center;
+}
+
+.rs-container {
+  margin-top: 1.5rem;
+}
+
+.rs-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.rs-item {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: left;
+  transition: transform 0.2s;
+}
+
+.rs-item:hover {
+  transform: scale(1.03);
+  background: #f9f9f9;
+}
+
+.rs-item h4 {
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
 }

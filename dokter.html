@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="png" href="asset/favicon.png">
+  <title>Daftar Dokter - SehatKu</title>
+</head>
+
+<script>
+  window.addEventListener("scroll", function() {
+    const header = document.querySelector("header");
+    if (window.scrollY > 50) { // setelah scroll 50px
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  });
+</script>
+
+<body>
+<header>
+  <div class="logo"><a href="index.html"><strong>SEHATKU</strong></a></div>
+  <nav>
+    <a href="index.html">Beranda</a>
+    <a href="index.html#layanan">Layanan</a>
+    <a href="index.html#artikel">Artikel</a>
+    <a href="index.html#direktori">Direktori</a>
+    <a href="index.html#fitur">Fitur</a>
+    <a href="index.html#berita">Berita</a>
+  </nav>
+  <div class="burger">
+    <i class="fas fa-bars"></i>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Daftar Dokter</h1>
+  <p>Temukan dokter terbaik sesuai kebutuhan Anda.</p>
+</section>
+
+<div class="container">
+  <section id="dokter">
+    <h2><i class="fas fa-user-md"></i> Dokter Kami</h2>
+    <div class="dokter-list">
+
+      <div class="dokter-card">
+        <h3>dr. Andi Wijaya</h3>
+        <p><strong>Spesialis:</strong> Umum</p>
+        <p><strong>Klinik:</strong> Klinik Sehat Sentosa</p>
+        <p><strong>Jam Praktek:</strong> 08:00 - 12:00</p>
+        <a href="tel:+6281234567890" class="btn">Hubungi Sekarang</a>
+      </div>
+
+      <div class="dokter-card"><h3>dr. Siti Haryani</h3><p><strong>Spesialis:</strong> Anak</p><p><strong>Klinik:</strong> Klinik Bunda Medika</p><p><strong>Jam Praktek:</strong> 13:00 - 16:00</p><a href="tel:+6281234567891" class="btn">Hubungi Sekarang</a></div>
+      <div class="dokter-card"><h3>dr. Budi Santoso</h3><p><strong>Spesialis:</strong> Gigi</p><p><strong>Klinik:</strong> Klinik Mulut Sehat</p><p><strong>Jam Praktek:</strong> 09:00 - 12:00</p><a href="tel:+6281234567892" class="btn">Hubungi Sekarang</a></div>
+      <div class="dokter-card"><h3>dr. Rina Kurnia</h3><p><strong>Spesialis:</strong> Kulit</p><p><strong>Klinik:</strong> Klinik Derma Care</p><p><strong>Jam Praktek:</strong> 10:00 - 13:00</p><a href="tel:+6281234567893" class="btn">Hubungi Sekarang</a></div>
+      <div class="dokter-card"><h3>dr. Dedi Pratama</h3><p><strong>Spesialis:</strong> Jantung</p><p><strong>Klinik:</strong> Klinik Heart Center</p><p><strong>Jam Praktek:</strong> 14:00 - 17:00</p><a href="tel:+6281234567894" class="btn">Hubungi Sekarang</a></div>
+      <div class="dokter-card"><h3>dr. Ayu Lestari</h3><p><strong>Spesialis:</strong> Kandungan</p><p><strong>Klinik:</strong> Klinik Ibu & Anak</p><p><strong>Jam Praktek:</strong> 08:00 - 11:00</p><a href="tel:+6281234567895" class="btn">Hubungi Sekarang</a></div>
+      <div class="dokter-card"><h3>dr. Hasan Basri</h3><p><strong>Spesialis:</strong> Bedah</p><p><strong>Klinik:</strong> Klinik Bedah Modern</p><p><strong>Jam Praktek:</strong> 15:00 - 18:00</p><a href="tel:+6281234567896" class="btn">Hubungi Sekarang</a></div>
+      <div class="dokter-card"><h3>dr. Dewi Anggraini</h3><p><strong>Spesialis:</strong> Mata</p><p><strong>Klinik:</strong> Klinik Vision Plus</p><p><strong>Jam Praktek:</strong> 09:00 - 12:00</p><a href="tel:+6281234567897" class="btn">Hubungi Sekarang</a></div>
+      <div class="dokter-card"><h3>dr. Putra Mahendra</h3><p><strong>Spesialis:</strong> THT</p><p><strong>Klinik:</strong> Klinik THT Prima</p><p><strong>Jam Praktek:</strong> 10:00 - 13:00</p><a href="tel:+6281234567898" class="btn">Hubungi Sekarang</a></div>
+      <div class="dokter-card"><h3>dr. Lina Marlina</h3><p><strong>Spesialis:</strong> Saraf</p><p><strong>Klinik:</strong> Klinik Neuro Care</p><p><strong>Jam Praktek:</strong> 13:00 - 16:00</p><a href="tel:+6281234567899" class="btn">Hubungi Sekarang</a></div>
+      <div class="dokter-card"><h3>dr. Farhan Yusuf</h3><p><strong>Spesialis:</strong> Umum</p><p><strong>Klinik:</strong> Klinik Utama Medika</p><p><strong>Jam Praktek:</strong> 08:00 - 11:00</p><a href="tel:+6281234567800" class="btn">Hubungi Sekarang</a></div>
+      <div class="dokter-card"><h3>dr. Maya Putri</h3><p><strong>Spesialis:</strong> Anak</p><p><strong>Klinik:</strong> Klinik Bunda Ceria</p><p><strong>Jam Praktek:</strong> 14:00 - 17:00</p><a href="tel:+6281234567801" class="btn">Hubungi Sekarang</a></div>
+      <div class="dokter-card"><h3>dr. Yoga Saputra</h3><p><strong>Spesialis:</strong> Gigi</p><p><strong>Klinik:</strong> Klinik Dental Smile</p><p><strong>Jam Praktek:</strong> 09:00 - 12:00</p><a href="tel:+6281234567802" class="btn">Hubungi Sekarang</a></div>
+      <div class="dokter-card"><h3>dr. Ratna Widya</h3><p><strong>Spesialis:</strong> Kulit</p><p><strong>Klinik:</strong> Klinik DermaGlow</p><p><strong>Jam Praktek:</strong> 15:00 - 18:00</p><a href="tel:+6281234567803" class="btn">Hubungi Sekarang</a></div>
+      <div class="dokter-card"><h3>dr. Ahmad Fauzi</h3><p><strong>Spesialis:</strong> Jantung</p><p><strong>Klinik:</strong> Klinik Heart Life</p><p><strong>Jam Praktek:</strong> 08:00 - 11:00</p><a href="tel:+6281234567804" class="btn">Hubungi Sekarang</a></div>
+      <div class="dokter-card"><h3>dr. Intan Sari</h3><p><strong>Spesialis:</strong> Kandungan</p><p><strong>Klinik:</strong> Klinik Ibu Sejahtera</p><p><strong>Jam Praktek:</strong> 10:00 - 13:00</p><a href="tel:+6281234567805" class="btn">Hubungi Sekarang</a></div>
+      <div class="dokter-card"><h3>dr. Galih Ramadhan</h3><p><strong>Spesialis:</strong> Bedah</p><p><strong>Klinik:</strong> Klinik Bedah Sehat</p><p><strong>Jam Praktek:</strong> 14:00 - 17:00</p><a href="tel:+6281234567806" class="btn">Hubungi Sekarang</a></div>
+      <div class="dokter-card"><h3>dr. Nia Fitria</h3><p><strong>Spesialis:</strong> Mata</p><p><strong>Klinik:</strong> Klinik Vision Medika</p><p><strong>Jam Praktek:</strong> 08:00 - 11:00</p><a href="tel:+6281234567807" class="btn">Hubungi Sekarang</a></div>
+      <div class="dokter-card"><h3>dr. Rizky Ananda</h3><p><strong>Spesialis:</strong> THT</p><p><strong>Klinik:</strong> Klinik THT Harmoni</p><p><strong>Jam Praktek:</strong> 13:00 - 16:00</p><a href="tel:+6281234567808" class="btn">Hubungi Sekarang</a></div>
+      <div class="dokter-card"><h3>dr. Kartika Dewi</h3><p><strong>Spesialis:</strong> Saraf</p><p><strong>Klinik:</strong> Klinik Neuro Health</p><p><strong>Jam Praktek:</strong> 09:00 - 12:00</p><a href="tel:+6281234567809" class="btn">Hubungi Sekarang</a></div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <p class="daftar-anggota"><strong>Anggota Kelompok:</strong></p>
+  <ul>
+    <li><a href="#">Nabila Alsa Haryanto [K1D024006]</a></li>
+    <li><a href="#">Nabila Dwi Setiawati [K1D024005]</a></li>
+    <li><a href="#">Meylina Nur Sasmita [K1D024017]</a></li>
+  </ul>
+  <p>&copy; <strong>2025 SehatKu.</strong> Semua Hak Dilindungi.</p>
+</footer>
+
+<script>
+  const burger = document.querySelector('.burger');
+  const nav = document.querySelector('nav');
+  burger.addEventListener('click', () => {
+    nav.classList.toggle('active');
+    burger.querySelector('i').classList.toggle('fa-bars');
+    burger.querySelector('i').classList.toggle('fa-times');
+  });
+</script>
+</body>
+</html>

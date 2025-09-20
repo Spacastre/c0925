@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Rumah Sakit & Klinik - SehatKu</title>
+</head>
+
+<script>
+  window.addEventListener("scroll", function() {
+    const header = document.querySelector("header");
+    if (window.scrollY > 50) { // setelah scroll 50px
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  });
+</script>
+
+<body>
+<header>
+  <div class="logo"><a href="index.html"><strong>SEHATKU</strong></a></div>
+  <nav>
+    <a href="index.html">Beranda</a>
+    <a href="index.html#layanan">Layanan</a>
+    <a href="index.html#artikel">Artikel</a>
+    <a href="index.html#direktori">Direktori</a>
+    <a href="index.html#fitur">Fitur</a>
+    <a href="index.html#berita">Berita</a>
+  </nav>
+  <div class="burger">
+    <i class="fas fa-bars"></i>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Rumah Sakit & Klinik</h1>
+  <p>Temukan rumah sakit dan klinik terdekat dari lokasi Anda.</p>
+</section>
+
+ <!-- Konten Rumah Sakit & Klinik -->
+<section class="rs-section">
+  <h2><i class="fas fa-hospital"></i> Daftar Rumah Sakit & Klinik</h2>
+  <div class="rs-container">
+     <!-- Rumah Sakit -->
+    <h3>🏥 Rumah Sakit</h3>
+    <div class="rs-list">
+      <div class="rs-item">
+        <h4>RS Harapan Sehat</h4>
+        <p>Jl. Melati No. 12, Kota Mandiri</p>
+      </div>
+      <div class="rs-item">
+        <h4>RS Kasih Ibu</h4>
+        <p>Jl. Anggrek No. 45, Kota Damai</p>
+      </div>
+      <div class="rs-item">
+        <h4>RSU Sentosa</h4>
+        <p>Jl. Mawar No. 78, Kota Jaya</p>
+      </div>
+            <div class="rs-item">
+        <h4>RSU Indah</h4>
+        <p>Jl. Teh No. 34, Kota Mandiri</p>
+      </div>
+    </div>
+     <!-- Klinik -->
+    <h3>🏥 Klinik</h3>
+    <div class="rs-list">
+     <div class="rs-item">
+        <h4>Klinik Sejahtera</h4>
+        <p>Jl. Kenanga No. 5, Kota Mandiri</p>
+      </div>
+     <div class="rs-item">
+        <h4>Klinik Medika Utama</h4>
+        <p>Jl. Kemuning No. 14, Kota Damai</p>
+     </div>
+     <div class="rs-item">
+        <h4>Klinik Cahaya Bunda</h4>
+        <p>Jl. Cendana No. 9, Kota Jaya</p>
+      </div>
+      <div class="rs-item">
+       <h4>Klinik Keluarga</h4>
+        <p>Jl. Teratai No. 20, Kota Harapan</p>
+      </div>
+      <div class="rs-item">
+        <h4>Klinik Mitra Sehat</h4>
+        <p>Jl. Flamboyan No. 8, Kota Mandiri</p>
+      </div>
+      <div class="rs-item">
+        <h4>Klinik Nusantara</h4>
+        <p>Jl. Bougenville No. 33, Kota Damai</p>
+      </div>
+      <div class="rs-item">
+        <h4>Klinik Bhakti Insani</h4>
+        <p>Jl. Dahlia No. 55, Kota Jaya</p>
+      </div>
+        <div class="rs-item">
+        <h4>Klinik Ku</h4>
+        <p>Jl. Pisang No. 9, Kota Jaya</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Footer -->
+<footer>
+  <p class="daftar-anggota"><strong>Anggota Kelompok:</strong></p>
+  <ul>
+    <li><a href="#">Nabila Alsa Haryanto [K1D024006]</a></li>
+    <li><a href="#">Nabila Dwi Setiawati [K1D024005]</a></li>
+    <li><a href="#">Meylina Nur Sasmita [K1D024017]</a></li>
+  </ul>
+  <p>&copy; <strong>2025 SehatKu.</strong> Semua Hak Dilindungi.</p>
+</footer>
+
+<script>
+  const burger = document.querySelector('.burger');
+  const nav = document.querySelector('nav');
+  burger.addEventListener('click', () => {
+    nav.classList.toggle('active');
+    burger.querySelector('i').classList.toggle('fa-bars');
+    burger.querySelector('i').classList.toggle('fa-times');
+  });
+</script>
+</body>
+</html>
